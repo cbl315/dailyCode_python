@@ -1,0 +1,10 @@
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li>{{ question.comment }},Pub-Date:{{question.pub_date}}, user:{{question.name}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

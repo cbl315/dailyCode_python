@@ -169,7 +169,7 @@ def main(stdscr):
         game_field.reset()
         return 'Game'
 
-    def not_game(stage):
+    def not_game(state):
         game_field.draw(stdscr)
         action = get_user_action(stdscr)
         responses = defaultdict(lambda: state)  # 默认是当前状态，没有行为就会一直在当前界面循环

@@ -1,10 +1,15 @@
-
+<form action="comment" method="post">{% csrf_token %} 
+  <p>UserName: <input type="text" name="uname" /></p>
+  <p>comment: <input type="text" name="comment" /></p>
+  <input type="submit" value="Submit" />
+</form>
+<h1>Comments History</h1>
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
-        <li>{{ question.comment }},Pub-Date:{{question.pub_date}}, user:{{question.name}}</li>
+        <li>User:{{question.name}}, Pub-Date:{{question.pub_date}}<br/>{{ question.comment }}</li>
     {% endfor %}
     </ul>
 {% else %}
-    <p>No polls are available.</p>
+    <p>No comments are available at present.</p>
 {% endif %}

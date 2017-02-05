@@ -18,5 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/', include('Comment.urls'))
+    url(r'^index/', include('Comment.urls', namespace='Comment'))
 ]
